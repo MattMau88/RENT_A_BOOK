@@ -13,8 +13,9 @@ require 'json'
 puts "Cleaning database..."
 User.destroy_all
 # destroying users will also destroy all books
-# Rental.destroy_all
-# puts "Deleted old data"
+Book.destroy_all
+Rental.destroy_all
+puts "Deleted old data"
 
 puts "now creating new users incl. their own books and rentals"
 
