@@ -12,9 +12,10 @@ require 'json'
 # IF I WANT TO CLEAN MY DB, UN_COMMENT THE FOLLOWING LINES:
 puts "Cleaning database..."
 User.destroy_all
-# destroying users will also destroy all books
-# Rental.destroy_all
-# puts "Deleted old data"
+# # destroying users will also destroy all books
+Book.destroy_all
+Rental.destroy_all
+puts "Deleted old data"
 
 puts "now creating new users incl. their own books and rentals"
 
@@ -33,6 +34,7 @@ test_user = User.create(email: "tester@lewagon.com", full_name: "Test User", pas
                     category: ["Business", "Fantasy", "Crime", "Poetry", "Children"].sample,
                     rental_fee_per_day: 2,
                     owner_id: u.id)
+                    # photo: Faker::Avatar.image)
 
     rand(1..2).times do
     r = Rental.create!(pickup_location: Faker::Address.full_address,

@@ -6,10 +6,6 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
-  def show
-    @book = Book.find(params[:id])
-  end
-
   # A user can create a new book: GET + POST
   # GET "books/new"
   def new
@@ -27,7 +23,9 @@ class BooksController < ApplicationController
 
   # A user can see any book page
   # GET "books/id"
-
+  def show
+    @book = Book.find(params[:id])
+  end
 
   private
 
