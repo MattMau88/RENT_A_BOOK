@@ -1,0 +1,38 @@
+.footer {
+    background: #383f51;
+    height: 100px;
+    color:white;
+    bottom: 0px;
+}
+.footer-links {
+    display: flex;
+    align-items: center;
+    
+}
+.footer-links a {
+    color: white;
+    opacity: 0.50;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 1px 20px;
+    text-align: left;
+    position: relative;
+    left: -450px;
+}
+.footer-links a:hover {
+    opacity: 1;
+}
+
+.footer-links h1 {
+    color:#838da7;
+    font-size: 20px;
+    position: absolute;
+    left: 20px;
+}
+
+.footer-links h6 {
+    color:#838da7;
+    position: absolute;
+    right: 20px;
+
+}
