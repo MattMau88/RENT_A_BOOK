@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :books, dependent: :destroy
+  has_many :books, dependent: :destroy, source: :books, foreign_key: :owner_id
   has_many :rentals_as_rentee, source: :rentals, foreign_key: :rentee_id
   has_many :rentals_as_owner, through: :books, source: :rentals, foreign_key: :owner_id
 
