@@ -1,0 +1,49 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <a class="navbar-brand" href="#">
+    <img src=<%= image_path "logo.jpg" %>/>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a href="#about" style="color:#838da7">About Us</a>
+  <a href="#contact" style="color:#838da7">All Categories</a>
+  <input type="text" placeholder="Search by title...">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" style="color:#838da7">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color:#838da7">Sign Up</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container" style="width:600px;">
+  <h1 class=""><strong>Add Book</strong></h1>
+   <div class="form-group">
+    <label for="title">Title:</label>
+    <input type="title" class="form-control" id="title" placeholder="Enter Title">
+    <label for="author">Author:</label>
+    <input type="author" class="form-control" id="author" placeholder="Enter Author">
+    <label for="description">Description:</label>
+    <input type="description" class="form-control" id="description" placeholder="Enter Description">
+    <label for="category">Category:</label>
+    <input type="category" class="form-control" id="category" placeholder="Enter Category">
+    <label for="rental">Rental Fee$</label>
+    <input type="rental" class="form-control" id="rental" placeholder="">
+  </div>
+  <form class="md-form">
+    <div class="file-field">
+      <div class="btn btn-primary btn-sm float-left">
+        <span>Choose Photo</span>
+        <input type="file">
+      </div>
+      <div class="file-path-wrapper">
+      </div>
+    </div>
+  </form>
+</div>
+
