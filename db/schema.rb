@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_01_095054) do
+ActiveRecord::Schema.define(version: 2020_06_02_073030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.text "description"
+    t.string "category"
+    t.integer "rental_fee_per_day"
+    t.bigint "owner_id_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["owner_id_id"], name: "index_books_on_owner_id_id"
+  end
+
+  create_table "rentals", force: :cascade do |t|
+    t.string "pickup_location"
+    t.datetime "pickup_date"
+    t.datetime "return_date"
+    t.bigint "book_id", null: false
+    t.bigint "rentee_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_rentals_on_book_id"
+    t.index ["rentee_id"], name: "index_rentals_on_rentee_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +47,13 @@ ActiveRecord::Schema.define(version: 2020_06_01_095054) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "full_name", default: "", null: false
+    t.string "profile_photo", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "books", "users", column: "owner_id_id"
+  add_foreign_key "rentals", "books"
+  add_foreign_key "rentals", "users", column: "rentee_id"
 end
