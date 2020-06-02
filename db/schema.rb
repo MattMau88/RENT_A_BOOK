@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_02_083044) do
+
+ActiveRecord::Schema.define(version: 2020_06_02_100140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,10 +43,10 @@ ActiveRecord::Schema.define(version: 2020_06_02_083044) do
     t.text "description"
     t.string "category"
     t.integer "rental_fee_per_day"
-    t.bigint "owner_id_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["owner_id_id"], name: "index_books_on_owner_id_id"
+    t.bigint "owner_id", null: false
+    t.index ["owner_id"], name: "index_books_on_owner_id"
   end
 
   create_table "rentals", force: :cascade do |t|
@@ -74,8 +75,8 @@ ActiveRecord::Schema.define(version: 2020_06_02_083044) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "books", "users", column: "owner_id_id"
+
+  add_foreign_key "books", "users", column: "owner_id"
   add_foreign_key "rentals", "books"
   add_foreign_key "rentals", "users", column: "rentee_id"
 end
