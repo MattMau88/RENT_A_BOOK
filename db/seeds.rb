@@ -28,13 +28,16 @@ test_user = User.create(email: "tester@lewagon.com", full_name: "Test User", pas
                     profile_photo: Faker::Avatar.image
                     )
   rand(2..5).times do
-    b = Book.create!(title: Faker::Book.title,
+    b = Book.new(title: Faker::Book.title,
                     author: Faker::Book.author,
                     description: Faker::Quote.famous_last_words,
-                    category: ["Action", "Business", "Biography", "Children", "Crime", "Comic", "Education", "Fantasy", "Humor", "Horror", "Romance", "Mystery", "Satire", "Sci-Fi", "Self-help" ].sample,
+                    category: Book::CATEGORIES.sample,
                     rental_fee_per_day: 2,
                     owner_id: u.id)
-                    # photo: Faker::Avatar.image)
+    file = URI.open('https://source.unsplash.com/featured/?book')
+    b.photo.attach(io: file, filename: 'book.png', content_type: 'image/png')
+    b.save!
+    puts "created book"
 
     rand(1..2).times do
     r = Rental.create!(pickup_location: Faker::Address.full_address,
