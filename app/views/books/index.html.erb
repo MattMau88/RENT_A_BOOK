@@ -2,10 +2,12 @@
 <!-- main container incl the listed book product cards -->
   <div style="background-color: white" class = "container">
 
-    <h1 class="left-margin">Insert Category Here</h1>
+    <h1 class="left-margin" style="text-align: center; margin-bottom: 20px; margin-top: 50px;">Insert Category Here</h1>
+    <div style="border-width: 2px; border-style: solid; margin-bottom: 50px;"></div>
      <div class = "row">
 
         <% @books.each do |book| %>
+       
           <div class="card-product col-sm-6">
             <!-- <img src="https://m.media-amazon.com/images/I/51Sn8PEXwcL.jpg" /> -->
             <%= cl_image_tag book.photo.key, height: 300, width: 200, crop: :fill %>
@@ -15,6 +17,8 @@
               <a><%= link_to "More details", book_path(book), class: "btn btn-primary" %></a>
               <p></p>
             </div>
+
+            <!-- <img src=<#%= cl_image_path book.photo.key, height: 100%, width: 120, crop: :fill %> /> -->
           </div>
         <% end %>
 

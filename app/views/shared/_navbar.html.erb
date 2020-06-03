@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-dark navbar-lewagon">
   <%= link_to pages_path, class: "navbar-brand" do %>
     <img src=<%= image_path "logo.jpg" %>/>
     <% end %>
@@ -14,10 +14,10 @@
         <li class="nav-item active">
           <%= render 'shared/search' %>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item active" style="margin-right: 40px; margin-left: 10px;">
           <%= link_to "Add New Book", new_book_path, class: "btn btn-primary" %>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" style="margin-left: 20px;">
           <%= link_to "Home", pages_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
