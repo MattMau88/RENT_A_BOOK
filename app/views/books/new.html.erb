@@ -7,7 +7,7 @@
         <%= f.input :title %>
         <%= f.input :author %>
         <%= f.input :description %>
-        <%= f.input :category %>
+        <%= f.input :category, collection: Book::CATEGORIES%>
         <%= f.input :rental_fee_per_day %>
         <%= f.input :photo, as: :file %>
     </div>
@@ -15,7 +15,7 @@
         <%= f.button :submit, class:"btn btn-primary" %>
         <%= link_to 'Back to Main', books_path %>
     </div>
-    
+
     <% end %>
     <br>
     <br>
