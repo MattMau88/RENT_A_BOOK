@@ -10,10 +10,12 @@ class BooksController < ApplicationController
   # GET "books/new"
   def new
     @book = Book.new
+    @user = current_user
   end
   # POST "books"
   def create
     @book = Book.new(book_params)
+    @book.user = current_user
     if @book.save
       redirect_to @book
     else
