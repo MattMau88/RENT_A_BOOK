@@ -1,1 +1,7 @@
 <img src="<%= cl_image_path @book.photo.key %>"> 
+<p><%= @book.title %></p>
+<p><%= @book.author %></p>
+<p><%= @book.description %></p>
+<p><%= @book.category %></p>
+<%= link_to 'Back to Main', books_path %>
+<%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -31,7 +31,7 @@ test_user = User.create(email: "tester@lewagon.com", full_name: "Test User", pas
     b = Book.create!(title: Faker::Book.title,
                     author: Faker::Book.author,
                     description: Faker::Quote.famous_last_words,
-                    category: ["Business", "Fantasy", "Crime", "Poetry", "Children"].sample,
+                    category: ["Action", "Business", "Biography", "Children", "Crime", "Comic", "Education", "Fantasy", "Humor", "Horror", "Romance", "Mystery", "Satire", "Sci-Fi", "Self-help" ].sample,
                     rental_fee_per_day: 2,
                     owner_id: u.id)
                     # photo: Faker::Avatar.image)

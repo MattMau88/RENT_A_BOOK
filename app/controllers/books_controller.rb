@@ -10,12 +10,11 @@ class BooksController < ApplicationController
   # GET "books/new"
   def new
     @book = Book.new
-    @user = current_user
   end
   # POST "books"
   def create
     @book = Book.new(book_params)
-    @book.user = current_user
+    @book.owner = current_user
     if @book.save
       redirect_to @book
     else
@@ -27,6 +26,12 @@ class BooksController < ApplicationController
   # GET "books/id"
   def show
     @book = Book.find(params[:id])
+  end
+
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to books_path, notice: 'Book was successfully deleted.'
   end
 
   private
