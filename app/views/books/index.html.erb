@@ -7,8 +7,8 @@
 
         <% @books.each do |book| %>
           <div class="card-product col-sm-6">
-            <img src="https://m.media-amazon.com/images/I/51Sn8PEXwcL.jpg" />
-            <!-- <img src=<#%= cl_image_path book.photo.key, height: 100%, width: 120, crop: :fill %> /> -->
+            <!-- <img src="https://m.media-amazon.com/images/I/51Sn8PEXwcL.jpg" /> -->
+            <%= cl_image_tag book.photo.key, height: 300, width: 200, crop: :fill %>
             <div class="card-product-infos">
               <h2><%= link_to book.title, book_path(book)%></h2>
               <h2><%= book.author %></h2>

@@ -1,8 +1,8 @@
 class Book < ApplicationRecord
-  CATEGORIES = ["Action", "Business", "Biography", "Children", "Crime", "Comic", "Education", "Fantasy", "Humor", "Horror", "Romance", "Mystery", "Satire", "Sci-Fi", "Self-help" ]
+  CATEGORIES = ["Action", "Business", "Biography", "Children", "Crime", "Comic", "Education", "Fantasy", "Humor", "Horror", "Romance", "Mystery", "Satire", "Sci-Fi", "Other" ]
   belongs_to :owner, class_name: "User"
 
-  has_many :rentals
+  has_many :rentals, dependent: :destroy
 
   has_one_attached :photo
 
