@@ -15,6 +15,7 @@ class RentalsController < ApplicationController
     def create
       @rental = Rental.new(rental_params)
       @rental.rentee = current_user
+      @rental.book = @book
       if @rental.save
         redirect_to @rental
       else
@@ -47,5 +48,5 @@ class RentalsController < ApplicationController
       params.require(:rental).permit(:pickup_date, :return_date, :pickup_location)
     end
   
-  end
+end
   

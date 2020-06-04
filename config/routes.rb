@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   end
   resources :pages
   resources :rentals, only: [:show]
+  resources :users, only: [:show]
+
 end
