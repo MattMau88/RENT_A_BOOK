@@ -1,16 +1,21 @@
 
-
-
-
 <div class="show-box ">
   <div class="rentalconfirmationcontainer border-right border-left border-dark">
     <ul class="margintb list-group mb-2"><strong>Booking Details</strong>
-      <li class="pt-2 list-group-item">Book Title:</li>
-      <li class="list-group-item" >Author:</li>
-      <li class="list-group-item">Pickup Location:</li>
-      <li class="list-group-item">Total Cost:</li>
-      <li class="list-group-item">Rental Dates xx-xx</li>
+      <li class="pt-2 list-group-item">Book Title: <%= @rental.book.title %></li>
+      <li class="list-group-item" >Author: <%= @rental.book.author %></li>
+      <li class="list-group-item">Delivery Location: <%= @rental.pickup_location %></li>
+      <!-- OPTIONAL NICE-TO-HAVE: Rental days and total fee calculation
+      -> add when this feature is implemented on rental submission form -->
+      
+      <li class="list-group-item">Rental Start Date: <%= @rental.pickup_date %></li>
+      <li class="list-group-item">Return Date: <%= @rental.return_date %></li>
+      
+      <li class="list-group-item">Book owner: <%= @rental.book.owner.full_name %></li>
+      <li class="list-group-item">Book owner email: <%= @rental.book.owner.email %></li>
+      
       <%= link_to 'Back to all books', books_path, class:"btn btn-gradient mt-3"%>
+      <p><%= link_to 'My profile', user_path(current_user.id), class:"btn btn-gradient mt-3 %></p>
       <div class="alert alert-success" role="alert">
       Successfull Booking!
       </div>
@@ -18,6 +23,9 @@
   </div>
 </div>
 
+<br>
+<p>Happy Reading!</p>
 
-
-
+<br>
+<p><%= link_to 'Back to all books', books_path %></p>
+<p><%= link_to 'My profile', user_path(current_user.id) %></p>
