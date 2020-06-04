@@ -4,19 +4,72 @@
   object-fit:cover;
 }
 
-
-.book-fit {
-}
-
 .img-cont {
-  width:900px;
-  height:900px;
+
   text-align: center;
 }
 
 
 .book-fit {
   width: 50%;
-  height: 500px;
+  height: 800px;
   object-fit:cover;
 }
+
+.form-container {
+  height: 100px;
+}
+
+.form-flex {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+}
+
+.item-1{
+  order: -1;
+}
+.item-2 {
+  order: 0;
+}
+
+
+.container-rental {
+  margin-right: auto;
+  margin-left: auto;
+  width: 1400px;
+}
+
+.margin-bottom-1 {
+  margin-bottom: 200px;
+  margin-top: 50px;
+  margin-left:10px;
+}
+
+
+.margintb {
+  margin-top: 100px;
+  margin-bottom:300px;
+}
+
+.rentalconfirmationcontainer {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  height:700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.btn-gradient {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: linear-gradient(#167FFB, #0F60C4);
+  transition: background 0.3s ease;
+  border: 1px solid #0F60C4;
+}
+
