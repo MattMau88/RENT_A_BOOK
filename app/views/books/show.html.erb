@@ -1,10 +1,16 @@
-<img height="500, width="500" src="<%= cl_image_path @book.photo.key  %>">
-<p><%= @book.title %></p>
-<p><%= @book.author %></p>
-<p><%= @book.description %></p>
-<p><%= @book.category %></p>
-<%= link_to 'Back to Main', books_path %>
-<%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
+ <div class="container img-cont">
+  <img height="500, width="500" src="<%= cl_image_path @book.photo.key %>" class="p-5 book-fit border border-dark mt-5">
+  <div class="text-center">
+    <h2 class="pt-3"><%= @book.title %></h2>
+    <h3><%= @book.author %></h3>
+    <p><%= @book.description %></p>
+    <p>Price: <%= @book.rental_fee_per_day %>$ per day</p>
+    <p><%= @book.category %></p>
+   
+    <%= link_to 'Back to all books', books_path %><br>
+    <%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </div>
+ </div>
+                    
 <!-- RENDER  -->
 <%= render 'shared/rental_form' %>
