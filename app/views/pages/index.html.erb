@@ -1,77 +1,76 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-1.2.1&w=1000&q=80);">
   <div class="container">
-    <h1><strong>Save up to 90% by renting books</strong></h1>
+    <h1 style="margin-bottom: 10px;"><strong>Save up to 90% by renting books</strong></h1>
     <a><%= link_to "Browse our collection", books_path, class: "btn btn-primary" %></a>
 
   </div>
 </div>
 
-<div class="category_text">
-	<h1>Choose your category</h1>
+<div style="" class="category_text">
+	<h1 class="my-4"><b>Choose a category</b></h1>
 </div>
 
 <div class="cards">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Action.jpg" %>)">
+      Action<%#=link_to "Action", book_path(@book) %>
+    </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Action.jpg" %>)">
-    Action
-  </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Business.jpg" %>)">
+      Business
+    </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Business.jpg" %>)">
-    Business
-  </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Biography.jpg" %>)">
+      Biography
+    </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Biography.jpg" %>)">
-    Biography
-  </div>
+  	<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Children.png" %>)">
+      Children
+    </div>
 
-	<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Children.png" %>)">
-    Children
-  </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Crime.jpg" %>)">
+      Crime
+    </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Crime.jpg" %>)">
-    Crime
-  </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Comic.jpg" %>)">
+      Comic
+    </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Comic.jpg" %>)">
-    Comic
-  </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Drama.jpg" %>)">
+      Drama
+    </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Drama.jpg" %>)">
-    Drama
-  </div>
+  	<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Education.jpg" %>)">
+      Education
+    </div>
 
-	<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Education.jpg" %>)">
-    Education
-  </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Fantasy.jpg" %>)">
+      Fantasy
+    </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Fantasy.jpg" %>)">
-    Fantasy
-  </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Humor.jpg" %>)">
+      Humor
+    </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Humor.jpg" %>)">
-    Humor
-  </div>
+  	<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Romance.jpg" %>)">
+      Romance
+    </div>
 
-	<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Romance.jpg" %>)">
-    Romance
-  </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Mystery.jpg" %>)">
+      Mystery
+    </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Mystery.jpg" %>)">
-    Mystery
-  </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Satire.jpg" %>)">
+      Satire
+    </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Satire.jpg" %>)">
-    Satire
-  </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Sci-Fi.jpg" %>)">
+      Sci-Fi
+    </div>
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Sci-Fi.jpg" %>)">
-    Sci-Fi
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Self-help.jpg" %>)">
-    Self-help
-  </div>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path "Self-help.jpg" %>)">
+      Self-help
+    </div>
 
 
 

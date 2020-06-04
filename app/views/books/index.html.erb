@@ -2,22 +2,23 @@
 <!-- main container incl the listed book product cards -->
   <div style="background-color: white" class = "container">
 
-    <h1 class="left-margin" style="text-align: center; margin-bottom: 20px; margin-top: 50px;">Insert Category Here</h1>
+    <h1 class="left-margin m-5 pt-5" style="text-align: center; margin-bottom: 20px; margin-top: 50px;">Insert Category Here</h1>
     <div style="border-width: 2px; border-style: solid; margin-bottom: 50px;"></div>
      <div class = "row">
 
         <% @books.each do |book| %>
-       
-          <div class="card-product col-sm-6">
-            <!-- <img src="https://m.media-amazon.com/images/I/51Sn8PEXwcL.jpg" /> -->
-            <%= cl_image_tag book.photo.key, height: 300, width: 200, crop: :fill %>
-            <div class="card-product-infos">
-              <h2><%= link_to book.title, book_path(book)%></h2>
-              <h2><%= book.author %></h2>
-              <a><%= link_to "More details", book_path(book), class: "btn btn-primary" %></a>
-              <p></p>
-            </div>
 
+          <div class="col-sm-6" style="margin-bottom: 100px;">
+            <!-- <img src="https://m.media-amazon.com/images/I/51Sn8PEXwcL.jpg" /> -->
+            <div class="card-product">
+              <%= cl_image_tag book.photo.key, class:"image-fit ml-5 pl-5" %>
+              <div style="text-align: center" class="card-product-infos ml-3">
+                <h2><%= link_to book.title, book_path(book)%></h2>
+                <h3><%= book.author %></h3>
+                <a><%= link_to "More details", book_path(book), class: "btn btn-primary" %></a>
+                <p></p>
+            </div>
+            </div>
             <!-- <img src=<#%= cl_image_path book.photo.key, height: 100%, width: 120, crop: :fill %> /> -->
           </div>
         <% end %>
