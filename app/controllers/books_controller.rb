@@ -3,7 +3,11 @@ class BooksController < ApplicationController
   # A user can see the list of books
   # GET "books"
   def index
-    @books = Book.all
+    if params[:query].present?
+      @books = Book.search_by_title_and_author(params[:query])
+    else
+      @books = Book.all
+    end
   end
 
   # A user can create a new book: GET + POST
