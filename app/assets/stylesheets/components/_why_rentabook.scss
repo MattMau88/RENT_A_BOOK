@@ -1,13 +1,14 @@
 .card-why {
-    width: 200px;
-    border-radius: 3px;
-    box-shadow: 0 0 8px #4e4d4d;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 0 2px #4e4d4d;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
+    margin-right: 70px;
 }
   
 .card-why img {
-    height: 200px;
+    height: 250px;
 }
   
 .card-why h3 {
@@ -23,23 +24,29 @@
 
 .cards-why {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 100px;
+    padding-top: 60px;
 }
 
 .container-why {
     width: 900px;
     margin: auto;
+    font-size: 20px;
+    color: #383F51;
+    text-align: center;
+    
 }
- 
-h2 {
-    font-size: 40px;
+
+
+.cards-why h2 {
+    font-size: 20px;
     color: #383F51;
     margin: 100px;
     text-align: center;
 }
 
-h3 {
-    font-size: 50px;
+.cards-why h3 {
+    font-size: 30px;
     color: #383F51;
 }

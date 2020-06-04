@@ -4,10 +4,10 @@
   <div>
     <div class="container form-flex bt-5 mr-5">
       <%= render 'shared/rental_form' %>
-     <div class="img-cont  item-1 pr-5 ">
-      <img style="height:500px; width:400px;" src="<%= cl_image_path @book.photo.key %>" class="p-5 book-fit">
-      <div class="text-center pb-5 mb-5">
-        <h2 class="pt-3"><%= @book.title %></h2>
+     <div class="img-cont item-1 pr-5 ">
+      <img style="height:400px; width:400px;" src="<%= cl_image_path @book.photo.key %>" class="p-5 book-fit">
+      <div class="bookshow text-center pb-5 mb-5">
+        <h1 class="pt-3"><%= @book.title %></h1>
         <h3><%= @book.author %></h3>
         <p><%= @book.description %></p>
         <p>Price: <%= @book.rental_fee_per_day %>$ per day</p>
