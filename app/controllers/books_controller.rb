@@ -26,6 +26,7 @@ class BooksController < ApplicationController
   # GET "books/id"
   def show
     @book = Book.find(params[:id])
+    @rental = Rental.new
   end
 
   def destroy
