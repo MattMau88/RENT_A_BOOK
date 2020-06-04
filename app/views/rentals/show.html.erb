@@ -1,2 +1,22 @@
 <p>Rental confirmation page</p>
+<p>Congrats your book rental reuest is confirmed. Please review the following rental details, and get in touch with the book owner, if needed to further clarify anything</p>
+<br>
+<p>BOOK:</p>
+<p>Book title: <%= @rental.book.title %></p>
+<p>Book author:<%= @rental.book.author %></p>
+<br>
+<p>RENTAL DETAILS:</p>
+<p>Delivery Location: <%= @rental.pickup_location %></p>
+<p>Rental Start Date: <%= @rental.pickup_date %></p>
+<p>Return Date: <%= @rental.return_date %></p>
+<!-- OPTIONAL NICE-TO-HAVE: Rental days and total fee calculation
+-> add when this feature is implemented on rental submission form -->
+<p>Book owner: <%= @rental.book.owner.full_name %> </p>
+<p>Book owner email: <%= @rental.book.owner.email %></p>
 
+<br>
+<p>Happy Reading!</p>
+
+<br>
+<p><%= link_to 'Back to all books', books_path %></p>
+<p><%= link_to 'My profile', user_path(current_user.id) %></p>

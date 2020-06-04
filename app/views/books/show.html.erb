@@ -6,11 +6,11 @@
     <p><%= @book.description %></p>
     <p>Price: <%= @book.rental_fee_per_day %>$ per day</p>
     <p><%= @book.category %></p>
-   
+
     <%= link_to 'Back to all books', books_path %><br>
     <%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </div>
  </div>
-                    
+
 <!-- RENDER  -->
 <%= render 'shared/rental_form' %>
