@@ -12,8 +12,9 @@
             <!-- <img src="https://m.media-amazon.com/images/I/51Sn8PEXwcL.jpg" /> -->
             <%= cl_image_tag book.photo.key, height: 300, width: 200, crop: :fill %>
             <div class="card-product-infos">
-              <h2><%= link_to book.title, book_path(book)%></h2>
-              <h2><%= book.author %></h2>
+              <h3><%= link_to book.title, book_path(book)%></h3>
+              <h4><%= book.author %></h4>
+              <h4>Price: <%= book.rental_fee_per_day %>$/day</h4>
               <a><%= link_to "More details", book_path(book), class: "btn btn-primary" %></a>
               <p></p>
             </div>
