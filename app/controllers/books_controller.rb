@@ -18,8 +18,8 @@ class BooksController < ApplicationController
   end
   # POST "books"
   def create
-    authorize @book
     @book = Book.new(book_params)
+    authorize @book
     @book.owner = current_user
     if @book.save
       redirect_to @book
@@ -42,12 +42,14 @@ class BooksController < ApplicationController
 
   def update
     @book = Book.find(params[:id])
+    authorize @book
     @book.update(book_params)
     redirect_to books_path
   end
 
   def destroy
     @book = Book.find(params[:id])
+    authorize @book
     @book.destroy
     redirect_to books_path, notice: 'Book was successfully deleted.'
   end

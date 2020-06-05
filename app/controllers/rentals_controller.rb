@@ -10,6 +10,7 @@ class RentalsController < ApplicationController
   # POST "rental"
   def create
     @rental = Rental.new(rental_params)
+    authorize @rental
     @rental.rentee = current_user
     @rental.book = @book
     @rental.book.owner.full_name = @book.owner.full_name
@@ -25,6 +26,7 @@ class RentalsController < ApplicationController
   # GET "rentals/id"
   def show
     @rental = Rental.find(params[:id])
+    authorize @rental
   end
 
   def destroy
