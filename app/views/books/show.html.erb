@@ -1,22 +1,24 @@
 
 <div class="container-rental img-cont ">
-<h1 class="img-cont border-bottom border-dark m-3 form-container pt-4"><strong> Book Rental </strong></h1>
+  <h1 class="img-cont border-bottom border-dark form-container pt-4"><strong> Book Rental </strong></h1>
   <div>
-  <div class="container-profile col-sm-12">
-    <div class="column col-sm-4">  
-     <div class="img-cont item-1 pr-5 ">
-      <img style="height:400px; width:400px;" src="<%= cl_image_path @book.photo.key %>" class="p-5 book-fit">
-      <div class="bookshow text-center pb-5 mb-2">
+  <div class="container-profile col-sm-12" style="padding:80px">
+    <div class="column col-sm-5">  
+      <img style="height:300px; width:300px; background-size: auto; background-position: center;" src="<%= cl_image_path @book.photo.key %>" class="book-fit">
+      <div class="bookshow" style="">
         <h3><%= @book.title %></h3>
-        <p><%= @book.author %></p>
-        <p>Description: <%= @book.description %></p>
-        <p>Price: <%= @book.rental_fee_per_day %>$ per day</p>
-        <p>Category: <%= @book.category %></p>
+        <p><strong>Author: </strong><%= @book.author %></p>
+        <p><strong>Description: </strong><%= @book.description %></p>
+        <p><strong>Price: </strong><%= @book.rental_fee_per_day %>$ per day</p>
+        <p><strong>Category: </strong><%= @book.category %></p>
         <%= link_to 'Back to all books', books_path, class: "btn btn-color" %>
-        <%= link_to 'edit', edit_book_path(@book), class: "btn btn-color" %>
-        <%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-color" %>
+        <% if user_signed_in? && policy(@book).edit? %>
+          <%= link_to 'edit', edit_book_path(@book), class: "btn btn-color" %>
+          <%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-color" %>
+        <% end %>
+      </div> 
     </div> 
-    <div class="column col-sm-8">  
+    <div class="column col-sm-5">  
       <%= render 'shared/rental_form' %>
     </div>
   </div>

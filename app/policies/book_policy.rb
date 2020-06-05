@@ -22,16 +22,15 @@ class BookPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin ? true : owner_of?
+    owner_of?
   end
 
   def destroy?
-    user.admin ? true : owner_of?
+    owner_of?
   end
 
   private
-
   def owner_of? #if the user is owner of that book
-    record.user == user
+    record.owner == user
   end
 end

@@ -1,6 +1,6 @@
 <br>
 <br>
-<div class=" content container-profile col-sm-12">
+<div class=" content container-profile col-sm-12" >
   <div class="column col-sm-4">
     <h1><strong>Profile</strong></h1>
     <div style="border-width: 0.5px; border-style: solid; margin-bottom: 50px;"></div>
@@ -9,23 +9,26 @@
       <div class="form-inputs">
         <%= f.input :photo, as: :file %>
       </div>
+      <div class="form-actions">
+        <%= f.button :submit, class:"btn btn-primary" %>
+      </div>
     <% end %>
 
 
-    <h5><strong>Name: </strong><%= @user.full_name %></h5>
-    <h5><strong>Email: </strong><%= @user.email %></h5>
+    <p><strong>Name: </strong><%= @user.full_name %></p>
+    <p><strong>Email: </strong><%= @user.email %></p>
   </div>
 
-  <div class="column col-sm-8">
+  <div class="bookshelves column col-sm-8" style="margin-top:-300px; padding:300px;">
     <h1><strong>My Bookselves:</strong></h1>
     <% @user.books.each do |book| %>
       <div class="card-product-profile">
         <%= cl_image_tag book.photo.key if book.photo.attached?%>
-        <div class="card-product-infos">
+        <div class="card-product-profile-infos">
           <h2>Title: <%= book.title %> </h2>
           <p>Author: <%= book.author %> </p>
           <p>Category: <%= book.category %></p>
-          <p>Price: <%= book.rental_fee_per_day %></p>
+          <p>Price: <%= book.rental_fee_per_day %>$/day</p>
         </div>
       </div>
     <% end %>
