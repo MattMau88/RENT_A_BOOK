@@ -1,28 +1,27 @@
 
-  <div class="border border-dark p-1 margin-bottom-1">
-   <div class="col-md-10 m-3 form-container mt-3">
-    <br>
-    <div class="ml-5">
-      <%= simple_form_for [@book, @rental] do |f|%>
-        <h3><strong>Information about game owner</strong></h3>
-        <p class="my-3">Game Owner <%= @book.owner.full_name %></p>
-        <p class="my-3">Email contact: <%= @book.owner.email %></p>
-        <h3><strong>Fill out the form to rent this book:</strong></h3>
-        <div class="form-inputs">
-          <%= f.input :pickup_location, label: 'Delivery Location', placeholder: "Enter where you would like the book to be sent", hint: "Full address incl. name, street, no, postal code, city, country.." %>
-          <%= f.input :pickup_date, label: 'Desired Rental Start Date', as: :date, html5: true %>
-          <%= f.input :return_date, label: 'Desired Return Date', as: :date, html5: true %>
-        </div>
-        <!-- OPTIONAL FOR LATER: implementation needing JS to calculate rental days and total rental fee -->
-       <!-- <p>You will rent this book for <%#= (:return_date - :pickup_date) %> days at price of <%#= book.rental_fee_per_day %>$/day $</p>
-        <p>Total rental fee = <%#= (:return_date - :pickup_date)* book.rental_fee_per_day %>$</p> -->
-        <div class="form-actions">
-          <%= f.button :submit, "Submit Rental Request", class:"btn btn-primary" %>
-        </div>
-      <% end %>
-    </div>
+<div class="border border-dark p-1 margin-bottom-1">
+  <div class="col-md-10 m-3 form-container mt-3">
+  <br>
+  <div class="ml-5">
+    
 
+    <%= simple_form_for [@book, @rental] do |f|%>
+      <h3><strong>Information of book owner</strong></h3>
+      <p class="my-3">Book Owner <%= @book.owner.full_name %></p>
+      <p class="my-3">Email contact: <%= @book.owner.email %></p>
+      <h3><strong>Fill out the form to rent this book:</strong></h3>
+      <div class="form-inputs">
+        <%= f.input :pickup_location, label: 'Delivery Location', placeholder: "Enter where you would like the book to be sent", hint: "Full address incl. name, street, no, postal code, city, country.." %>
+        <%= f.input :pickup_date, label: 'Desired Rental Start Date', as: :date, html5: true %>
+        <%= f.input :return_date, label: 'Desired Return Date', as: :date, html5: true %>
+      </div>
+      <!-- OPTIONAL FOR LATER: implementation needing JS to calculate rental days and total rental fee -->
+      <!-- <p>You will rent this book for <%#= (:return_date - :pickup_date) %> days at price of <%#= book.rental_fee_per_day %>$/day $</p>
+      <p>Total rental fee = <%#= (:return_date - :pickup_date)* book.rental_fee_per_day %>$</p> -->
+      <div class="form-actions">
+        <%= f.button :submit, "Submit Rental Request", class:"btn btn-primary" %>
+      </div>
+    <% end %>
   </div>
-
-  </div>
+</div>
 
