@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-dark navbar-lewagon">
-  <%= link_to pages_path, class: "navbar-brand" do %>
-    <img src=<%= image_path "logo.jpg" %>/>
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "logo.jpg" %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,10 +10,11 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
         <li class="nav-item active">
           <%= render 'shared/search' %>
         </li>
+      <% if user_signed_in? %>
+        
         <li class="nav-item active" style="margin-right: 40px; margin-left: 10px;">
           <%= link_to "Add New Book", new_book_path, class: "btn btn-color"%>
         </li>

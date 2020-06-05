@@ -14,6 +14,7 @@
         <p>Category:<%= @book.category %></p>
 
         <%= link_to 'Back to all books', books_path %>/
+        <%= link_to 'edit', edit_book_path(@book) %>/
         <%= link_to 'Destroy', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
      </div>
