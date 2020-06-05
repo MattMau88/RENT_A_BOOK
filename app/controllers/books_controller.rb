@@ -4,9 +4,15 @@ class BooksController < ApplicationController
   # A user can see the list of books
   # GET "books"
   def index
+
     @books = policy_scope(Book)
     if params[:query].present?
-      @books = @books.search_by_title_and_author(params[:query])
+      @books = Book.search_or_filter(params[:query]).order(title: :asc)
+    elsif params[:filter]
+      @filter = params[:filter][:query]
+      @books = Book.all.search_or_filter("#{@filter}").order(title: :asc)
+    else
+      @books = Book.all.order(title: :asc)
     end
   end
 
