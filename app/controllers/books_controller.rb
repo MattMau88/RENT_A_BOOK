@@ -1,12 +1,12 @@
 class BooksController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
   # A user can see the list of books
   # GET "books"
   def index
+    @books = policy_scope(Book)
     if params[:query].present?
-      @books = Book.search_by_title_and_author(params[:query])
-    else
-      @books = Book.all
+      @books = @books.search_by_title_and_author(params[:query])
     end
   end
 
@@ -14,9 +14,11 @@ class BooksController < ApplicationController
   # GET "books/new"
   def new
     @book = Book.new
+    authorize @book
   end
   # POST "books"
   def create
+    authorize @book
     @book = Book.new(book_params)
     @book.owner = current_user
     if @book.save
@@ -31,6 +33,17 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @rental = Rental.new
+    authorize @book
+  end
+
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    @book.update(book_params)
+    redirect_to books_path
   end
 
   def destroy
@@ -45,4 +58,8 @@ class BooksController < ApplicationController
     params.require(:book).permit(:title, :author, :description, :category, :rental_fee_per_day, :photo)
   end
 
+  def set_book
+    @book = Book.find(params[:id])
+    authorize @book
+  end
 end

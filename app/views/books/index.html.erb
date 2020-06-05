@@ -13,8 +13,9 @@
             <!-- <img src="https://m.media-amazon.com/images/I/51Sn8PEXwcL.jpg" /> -->
 
             <div class="card-product">
-              <%= cl_image_tag book.photo.key, class:"image-fit ml-5 pl-5" if book.photo.attached?
-                 %>
+
+              <%= cl_image_tag book.photo.key, class:"image-fit ml-5 pl-5" if book.photo.attached?%>
+
               <div style="text-align: center" class="card-product-infos ml-3">
                 <h2><%= link_to book.title, book_path(book)%></h2>
                 <h3><%= book.author %></h3>

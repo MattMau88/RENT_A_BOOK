@@ -20,7 +20,7 @@
     <h1><strong>My Bookselves:</strong></h1>
     <% @user.books.each do |book| %>
       <div class="card-product-profile">
-        <%= cl_image_tag(book.photo.key) if book.photo.attached? %>
+        <%= cl_image_tag book.photo.key if book.photo.attached?%>
         <div class="card-product-infos">
           <h2>Title: <%= book.title %> </h2>
           <p>Author: <%= book.author %> </p>
@@ -33,7 +33,9 @@
     <h1><strong>Currently renting:</strong></h1>
     <% @books_rent.each do |rental| %>
       <div class="card-product-profile">
-        <%= cl_image_tag rental.book.photo.key if rental.book.photo.attached? %>
+
+        <%= cl_image_tag rental.book.photo.key if rental.book.photo.attached?%>
+
         <div class="card-product-infos">
           <h2>Title: <%= rental.book.title %></h2>
           <p>Return date: <%= rental.return_date %></p>

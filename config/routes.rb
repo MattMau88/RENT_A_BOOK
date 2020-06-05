@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :books do
     resources :rentals, only: [ :new, :create ]
   end
-  resources :pages
   resources :rentals, only: [:show]
   resources :users, only: [:show]
 
