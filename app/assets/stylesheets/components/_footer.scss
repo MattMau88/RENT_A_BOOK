@@ -2,11 +2,12 @@
     background: #383f51;
     color:white;
     padding: 58px 0;
+    height: 50px;
 }
 .footer-links {
     display: flex;
     align-items: center;
-    
+
 }
 .footer-links a {
     color: white;
@@ -35,3 +36,7 @@
     right: 20px;
 }
 
+.content {
+  min-height: calc(100vh - 70px);
+  padding: 40px 40px 0 40px;
+}
