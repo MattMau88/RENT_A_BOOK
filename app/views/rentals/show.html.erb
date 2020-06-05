@@ -1,31 +1,35 @@
 
-<div class="content show-box ">
-  <div class="rentalconfirmationcontainer border-right border-left border-dark">
-    <ul class="margintb list-group mb-2"><strong>Booking Details</strong>
-      <li class="pt-2 list-group-item">Book Title: <%= @rental.book.title %></li>
-      <li class="list-group-item" >Author: <%= @rental.book.author %></li>
-      <li class="list-group-item">Delivery Location: <%= @rental.pickup_location %></li>
-      <!-- OPTIONAL NICE-TO-HAVE: Rental days and total fee calculation
-      -> add when this feature is implemented on rental submission form -->
+<div class="card card2" >
+  <div class="card-body"></div>
+  <div class="card-header test1" style="background-color:#C8C8C8"><strong>Booking details</strong></div>
+        <ul class="test1 card-header"><strong>Booking details</strong>
+        <li class="card-title mt-3" >Book Title: <%= @rental.book.title %></li>
+        <li  >Author: <%= @rental.book.author %></li>
+        <li >Delivery Location: <%= @rental.pickup_location %></li>
+        <!-- OPTIONAL NICE-TO-HAVE: Rental days and total fee calculation
+        -> add when this feature is implemented on rental submission form -->
 
-      <li class="list-group-item">Rental Start Date: <%= @rental.pickup_date %></li>
-      <li class="list-group-item">Return Date: <%= @rental.return_date %></li>
+        <li >Rental Start Date: <%= @rental.pickup_date %></li>
+        <li >Return Date: <%= @rental.return_date %></li>
 
-      <li class="list-group-item">Book owner: <%= @rental.book.owner.full_name %></li>
-      <li class="list-group-item">Book owner email: <%= @rental.book.owner.email %></li>
+        <li >Book owner: <%= @rental.book.owner.full_name %></li>
+        <li >Book owner email: <%= @rental.book.owner.email %></li>
 
-      <%= link_to 'Back to all books', books_path, class:"btn btn-gradient mt-3"%>
-      <p><%= link_to 'My profile', user_path(current_user.id), class:"btn btn-gradient mt-3" %></p>
-      <div class="alert alert-success" >
-      Successfull Booking!
-      </div>
-     </ul>
+        <div class="alert alert-success" >
+        Successfull Booking!
+        <p>Happy Reading!</p>
+        </div>
+       </ul>
+        <br>
   </div>
 </div>
 
-<br>
-<p>Happy Reading!</p>
+      <div class="card">
+        <li><%= link_to 'Back to all books', books_path, class:"btn btn-primary mt-3"%></li>
+        <p><%= link_to 'My profile', user_path(current_user.id), class:"btn btn-primary mt-3" %></p>
+        <p><%= link_to 'Back to all books', books_path %></p>
+        <p><%= link_to 'My profile', user_path(current_user.id) %></p>
+      </div>
+     <img class="img col-lg-2 center " src="https://images-na.ssl-images-amazon.com/images/I/41J6Qjnn60L._SX311_BO1,204,203,200_.jpg" alt="Card image cap">
 
-<br>
-<p><%= link_to 'Back to all books', books_path %></p>
-<p><%= link_to 'My profile', user_path(current_user.id) %></p>
+
