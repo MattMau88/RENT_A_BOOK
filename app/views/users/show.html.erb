@@ -1,7 +1,7 @@
 <br>
 <br>
-<div class="container-profile col-sm-12">
-  <div class="column col-sm-4">  
+<div class=" content container-profile col-sm-12">
+  <div class="column col-sm-4">
     <h1><strong>Profile</strong></h1>
     <div style="border-width: 0.5px; border-style: solid; margin-bottom: 50px;"></div>
     <img height="200", width="200" src="<%= @user.photo.attached? ? (cl_image_path @user.photo.key) : (image_path "default-profile.png")%>" >
@@ -10,13 +10,13 @@
         <%= f.input :photo, as: :file %>
       </div>
     <% end %>
-    
-    
+
+
     <h5><strong>Name: </strong><%= @user.full_name %></h5>
     <h5><strong>Email: </strong><%= @user.email %></h5>
   </div>
 
-  <div class="column col-sm-8"> 
+  <div class="column col-sm-8">
     <h1><strong>My Bookselves:</strong></h1>
     <% @user.books.each do |book| %>
       <div class="card-product-profile">
@@ -33,7 +33,9 @@
     <h1><strong>Currently renting:</strong></h1>
     <% @books_rent.each do |rental| %>
       <div class="card-product-profile">
+
         <%= cl_image_tag rental.book.photo.key if rental.book.photo.attached?%>
+
         <div class="card-product-infos">
           <h2>Title: <%= rental.book.title %></h2>
           <p>Return date: <%= rental.return_date %></p>
