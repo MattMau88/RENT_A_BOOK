@@ -3,7 +3,34 @@
 <div class="content">
   <div style="background-color: white" class = "container ">
 
-    <h1 class="left-margin m-5 pt-5" style="text-align: center; margin-bottom: 20px; margin-top: 50px;">Insert Category Here</h1>
+    <!-- <div>
+      <%#= simple_form_for :filter, url: books_path,
+                          method: "GET" do |f| %>
+        <%#= f.input :query, label: "Categories",  collection: Book::CATEGORIES, input_html: {value: ""}%>
+        <%#= f.submit "Filter", class: "btn btn-color-banner" %>
+        <%#= link_to "Reset", books_path, class: "btn btn-primary"  %>
+      <%# end %>
+    </div> -->
+
+    <ul>
+      <li><%= link_to "Action", books_path(query:"Action") %></li>
+      <li><%= link_to "Business", books_path(query:"Business") %></li>
+      <li><%= link_to "Biography", books_path(query:"Biography") %></li>
+      <li><%= link_to "Children", books_path(query:"Children") %></li>
+      <li><%= link_to "Crime", books_path(query:"Crime") %></li>
+      <li><%= link_to "Comic", books_path(query:"Comic") %></li>
+      <li><%= link_to "Drama", books_path(query:"Drama") %></li>
+      <li><%= link_to "Education", books_path(query:"Education") %></li>
+      <li><%= link_to "Fantasy", books_path(query:"Fantasy") %></li>
+      <li><%= link_to "Humor", books_path(query:"Humor") %></li>
+      <li><%= link_to "Romance", books_path(query:"Romance") %></li>
+      <li><%= link_to "Mystery", books_path(query:"Mystery") %></li>
+      <li><%= link_to "Satire", books_path(query:"Satire") %></li>
+      <li><%= link_to "Sci-Fi", books_path(query:"Sci-Fi") %></li>
+      <li><%= link_to "Other", books_path(query:"Other") %></li>
+    </ul>
+
+    <h1 class="left-margin m-5 pt-5" style="text-align: center; margin-bottom: 20px; margin-top: 50px;">List of Books</h1>
     <div style="border-width: 0.5px; border-style: solid; margin-bottom: 50px;"></div>
      <div class = "row">
 
