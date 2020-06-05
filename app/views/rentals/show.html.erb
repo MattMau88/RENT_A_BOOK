@@ -1,35 +1,34 @@
 
-<div class="card card2" >
-  <div class="card-body"></div>
-  <div class="card-header test1" style="background-color:#C8C8C8"><strong>Booking details</strong></div>
-        <ul class="test1 card-header"><strong>Booking details</strong>
-        <li class="card-title mt-3" >Book Title: <%= @rental.book.title %></li>
-        <li  >Author: <%= @rental.book.author %></li>
-        <li >Delivery Location: <%= @rental.pickup_location %></li>
-        <!-- OPTIONAL NICE-TO-HAVE: Rental days and total fee calculation
-        -> add when this feature is implemented on rental submission form -->
 
-        <li >Rental Start Date: <%= @rental.pickup_date %></li>
-        <li >Return Date: <%= @rental.return_date %></li>
+<div class="content container-profile col-sm-12" style="padding:200px" >
+  <div class="column col-sm-6" style="margin-right: -300px; margin-left: 200px">
+    <img height="250", width="250" src="<%= cl_image_path @rental.book.photo.key %>" >
+  </div>
+  <div class="column col-sm-6">
+    <div class="card-header test1" style="background-color:#383F51; color: white;"><strong>Booking details</strong></div>
+      <ul class="test1 card-header">
+      <h4><strong><%= @rental.book.title %></strong></h4>
+      <li> Author: <%= @rental.book.author %></li>
+      <li> Delivery Location: <%= @rental.pickup_location %></li>
+      <!-- OPTIONAL NICE-TO-HAVE: Rental days and total fee calculation
+      -> add when this feature is implemented on rental submission form -->
 
-        <li >Book owner: <%= @rental.book.owner.full_name %></li>
-        <li >Book owner email: <%= @rental.book.owner.email %></li>
+      <li >Rental Start Date: <%= @rental.pickup_date %></li>
+      <li >Return Date: <%= @rental.return_date %></li>
 
-        <div class="alert alert-success" >
+      <li >Book owner: <%= @rental.book.owner.full_name %></li>
+      <li >Book owner email: <%= @rental.book.owner.email %></li>
+
+      <div class="alert alert-success">
         Successfull Booking!
         <p>Happy Reading!</p>
-        </div>
-       </ul>
-        <br>
+      </div>
+      <%= link_to 'Back to all books', books_path, class:"btn btn-primary mt-3"%>
+      <%= link_to 'My profile', user_path(current_user.id), class:"btn btn-primary mt-3" %>
+    </div>
   </div>
+  
 </div>
 
-      <div class="card">
-        <li><%= link_to 'Back to all books', books_path, class:"btn btn-primary mt-3"%></li>
-        <p><%= link_to 'My profile', user_path(current_user.id), class:"btn btn-primary mt-3" %></p>
-        <p><%= link_to 'Back to all books', books_path %></p>
-        <p><%= link_to 'My profile', user_path(current_user.id) %></p>
-      </div>
-     <img class="img col-lg-2 center " src="https://images-na.ssl-images-amazon.com/images/I/41J6Qjnn60L._SX311_BO1,204,203,200_.jpg" alt="Card image cap">
 
 
