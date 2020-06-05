@@ -11,8 +11,8 @@ class Book < ApplicationRecord
   scope :rented, -> { where(rented: true) }
 
   include PgSearch::Model
-  pg_search_scope :search_by_title_and_author,
-    against: [ :title, :author ],
+  pg_search_scope :search_or_filter,
+    against: [ :title, :author, :category ],
     using: {
       tsearch: { prefix: true }
     }
